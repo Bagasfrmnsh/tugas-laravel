@@ -136,8 +136,50 @@ Route:: get('data-siswa', function(){
         ['nis' => 10, 'nama' => 'Fitri', 'jk' => 'Perempuan', 'jurusan' => 'RPL','
         kelas' => 'XII RPL 3', 'wakel' => 'Ms Yanti']
     ];
-
     return view('data-siswa', compact('data'));
+});
+Route:: get('siswa', function(){
+    $siswas = [
+        ['id'       => 1,
+        'nama'      => 'Aditya',
+        'username'  => 'aditya',
+        'email'     => 'aditya@gmail.com',
+        'alamat'    => 'Bandung',
+        'mapel'     => [
+                        'mapel1' => 'Bahasa Indonesia',
+                        'mapel2' => 'Bahasa Inggris',
+                        'mapel3' => 'Bahasa Jepang',
+                    ]
+                ],
+            ];
+    return view('siswa', compact('siswas'));
+});
+
+Route:: get('hobi', function(){
+    $hobis = [
+        ['nis'       => 1001,
+        'nama'      => 'Adzura',
+        'kelas'     => '12 RPL 1',
+        'hobi'     => [
+                        'hobi1' => 'Pergi ke CC',
+                        'hobi2' => 'Tiktokan',
+                        'hobi3' => 'Makan banyak',
+                    ]
+                ],
+            ['nis'       => 1002,
+            'nama'      => 'Bagas Firmansyah',
+            'kelas'     => '12 RPL 1',
+            'hobi'     => [
+                            'hobi1' => 'Main Bola',
+                            'hobi2' => 'Ngaji',
+                            'hobi3' => 'Memancing',
+                            'hobi4' => 'Selalu tersenyum',
+
+                        ]
+                    ],        
+        
+            ];
+    return view('hobi', compact('hobis'));
 });
 
 ?>
